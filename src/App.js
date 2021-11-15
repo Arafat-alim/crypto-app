@@ -38,9 +38,21 @@ const App = () => (
           </Switch>
         </div>
       </Layout>
+      <div className="footer">
+        <Typography.Title
+          level={5}
+          style={{ color: "#fff", textAlign: "center" }}
+        >
+          Crytoverse <br />
+          All Right Reserved
+        </Typography.Title>
+        <Space>
+          <Link to="/">Home</Link>
+          <Link to="/exchanges">Exchanges</Link>
+          <Link to="/news">News</Link>
+        </Space>
+      </div>
     </div>
-    <div className="footer"></div>
   </div>
 );
-
 export default App;
