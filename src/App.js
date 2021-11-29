@@ -51,6 +51,12 @@ const App = () => (
           <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
         </Space>
+        <Typography.Title
+          level={5}
+          style={{ color: "#fff", textAlign: "center" }}
+        >
+          Made With Love ❤️
+        </Typography.Title>
       </div>
     </div>
   </div>
