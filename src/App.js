@@ -43,7 +43,7 @@ const App = () => (
           level={5}
           style={{ color: "#fff", textAlign: "center" }}
         >
-          Crytoverse <br />
+          Made With ❤️ By Cryptoverse <br />
           All Right Reserved
         </Typography.Title>
         <Space>
@@ -51,12 +51,10 @@ const App = () => (
           <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
         </Space>
-        <Typography.Title
+        {/* <Typography.Title
           level={5}
           style={{ color: "#fff", textAlign: "center" }}
-        >
-          Made With Love ❤️
-        </Typography.Title>
+        ></Typography.Title> */}
       </div>
     </div>
   </div>
