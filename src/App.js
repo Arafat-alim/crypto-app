@@ -43,7 +43,7 @@ const App = () => (
           level={5}
           style={{ color: "#fff", textAlign: "center" }}
         >
-          Made With ❤️ By Cryptoverse <br />
+          MADE WITH ❤️ ARAFAT ALIM <br />
           All Right Reserved
         </Typography.Title>
         <Space>
