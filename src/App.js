@@ -4,7 +4,6 @@ import { Layout, Typography, Space } from "antd";
 import {
   NavBar,
   Homepage,
-  Exchanges,
   Cryptocurrencies,
   CryptoDetails,
   News,
@@ -23,9 +22,10 @@ const App = () => (
             <Route exact path="/">
               <Homepage />
             </Route>
-            <Route exact path="/exchanges">
+            {/* Exchange for pro Subscriber */}
+            {/* <Route exact path="/exchanges">
               <Exchanges />
-            </Route>
+            </Route> */}
             <Route exact path="/cryptocurrencies">
               <Cryptocurrencies />
             </Route>
@@ -43,12 +43,15 @@ const App = () => (
           level={5}
           style={{ color: "#fff", textAlign: "center" }}
         >
-          MADE WITH ❤️ ARAFAT ALIM <br />
-          All Right Reserved
+          <br />
+          <Link to="/">Made With ❤ Arafat Alim</Link>
+          <br />
+          Copyright &copy; All Rights Reserved
         </Typography.Title>
         <Space>
           <Link to="/">Home</Link>
-          <Link to="/exchanges">Exchanges</Link>
+          {/* Exhange is for Pro subscriber */}
+          {/* <Link to="/exchanges">Exchanges</Link> */}
           <Link to="/news">News</Link>
         </Space>
         {/* <Typography.Title

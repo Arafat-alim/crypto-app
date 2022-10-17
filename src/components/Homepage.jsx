@@ -10,12 +10,10 @@ const { Title } = Typography;
 
 const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
-  console.log("Data Called", data);
-
-  if (isFetching) return <Loader />;
-  //accessing the data
   const globalStats = data?.data?.stats;
   console.log(globalStats);
+
+  if (isFetching) return <Loader />;
 
   return (
     <>
@@ -43,6 +41,9 @@ const Homepage = () => {
             title="Total 24th Volume"
             value={millify(globalStats.total24hVolume)}
           />
+        </Col>
+        <Col span={12}>
+          <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
         </Col>
         <Col span={12}>
           <Statistic

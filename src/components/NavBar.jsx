@@ -5,18 +5,20 @@ import {
   HomeOutlined,
   MoneyCollectOutlined,
   BulbOutlined,
-  FundOutlined,
   MenuOutlined,
 } from "@ant-design/icons";
 import icon from "../images/cryptocurrency.png";
 const NavBar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
-  const [screenSize, setScreenSize] = useState(null);
+  const [screenSize, setScreenSize] = useState(undefined);
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
     handleResize();
     window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -49,9 +51,9 @@ const NavBar = () => {
             <Menu.Item icon={<MoneyCollectOutlined />}>
               <Link to="/cryptocurrencies">Cryptocurrencies</Link>
             </Menu.Item>
-            <Menu.Item icon={<FundOutlined />}>
+            {/* <Menu.Item icon={<FundOutlined />}>
               <Link to="/exchanges">Exchanges</Link>
-            </Menu.Item>
+            </Menu.Item> */}
             <Menu.Item icon={<BulbOutlined />}>
               <Link to="/news">News</Link>
             </Menu.Item>

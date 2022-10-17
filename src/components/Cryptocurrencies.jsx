@@ -11,11 +11,12 @@ const Cryptocurrencies = ({ simplified }) => {
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
 
   console.log("CryptoList", cryptosList);
-  const [cryptos, setCryptos] = useState([]);
+  const [cryptos, setCryptos] = useState();
   const [searchTerm, setSearchTerm] = useState("");
 
   //when my function is executed(cryptoList and searchTerm) - updating phase
   useEffect(() => {
+    setCryptos(cryptosList?.data?.coins);
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
       coin.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
@@ -41,9 +42,9 @@ const Cryptocurrencies = ({ simplified }) => {
             sm={12}
             lg={6}
             className="crypto-card"
-            key={currency.rank.toString()}
+            key={currency.uuid}
           >
-            <Link to={`/crypto/${currency.rank}`}>
+            <Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}, ${currency.name}`}
                 extra={
